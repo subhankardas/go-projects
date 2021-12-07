@@ -61,6 +61,16 @@ func max(num1 int, num2 int) int {
 	}
 }
 
+/* Public function names starts with uppercase */
+func PublicFunc() {
+	fmt.Println("this is a public function")
+}
+
+/* Private function names starts with lowercase */
+func privateFunc() {
+	fmt.Println("this is a private function")
+}
+
 /* Function returning multiple values */
 func swap(name1 string, name2 string) (string, string) {
 	return name2, name1
