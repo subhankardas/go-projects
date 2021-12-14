@@ -1,4 +1,4 @@
-package main
+package basics
 
 import (
 	"errors"
@@ -46,7 +46,8 @@ func divide(n1 float64, n2 float64) (float64, error) {
 	}
 	return n1 / n2, nil // Return with nil error
 }
-func main() {
+
+func Basics6() {
 	cr := circle{radius: 5}
 	rec := rectangle{width: 2, height: 3}
 

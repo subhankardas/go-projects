@@ -14,7 +14,7 @@ arrays and key-value maps. It also provides a rich standard library.
 */
 
 // 1. Package declaration
-package main
+package basics
 
 // 2. Import packages
 import "fmt"
@@ -22,7 +22,7 @@ import "fmt"
 var sum int = 10 // Global variable declaration
 
 // 3. Functions
-func main() {
+func Basics1() {
 	// 4. Variables
 	var name string = "go!" // ; is added automatically in compile-time
 

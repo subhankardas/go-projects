@@ -1,11 +1,11 @@
-package main
+package basics
 
 import (
 	"fmt"
 	"math"
 )
 
-func main() {
+func Basics2() {
 	var num int = 5
 	marks := [3]int{23, 45, 67}
 

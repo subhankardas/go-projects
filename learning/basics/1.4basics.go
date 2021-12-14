@@ -1,8 +1,8 @@
-package main
+package basics
 
 import "fmt"
 
-func main() {
+func Basics4() {
 	/* Maps */
 	mp := make(map[string]int)
 	fmt.Println(mp)

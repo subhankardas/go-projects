@@ -1,11 +1,11 @@
-package main
+package basics
 
 import (
 	"fmt"
 	"strings"
 )
 
-func main() {
+func Basics3() {
 	/* Strings */
 	var name string = "hello go!"
 	len := len(name)                                    // Length of string

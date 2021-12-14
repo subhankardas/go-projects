@@ -1,4 +1,4 @@
-package main
+package basics
 
 import (
 	"fmt"
@@ -22,7 +22,7 @@ func routine(rname string) {
  can grow and shrink according to the requirement of the program.
  But in threads, the size of the stack is fixed.
 */
-func main() {
+func Basics7() {
 	routine("simple function") // Simple synchronous function call
 
 	go routine("go routine") // Concurrent new goroutine call

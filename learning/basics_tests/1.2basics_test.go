@@ -1,4 +1,4 @@
-package main
+package basics_tests
 
 import "testing"
 

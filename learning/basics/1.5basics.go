@@ -1,4 +1,4 @@
-package main
+package basics
 
 import "fmt"
 
@@ -8,7 +8,7 @@ type person struct {
 	age  int
 }
 
-func main() {
+func Basics5() {
 	fmt.Println(person{"sam doe", 12})             // Directly initialize fields
 	fmt.Println(person{name: "mary doe", age: 23}) // Initialize by field names
 	fmt.Println(person{name: "some doe"})          // Partially initialize
