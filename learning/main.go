@@ -1,9 +1,11 @@
 package main
 
 import (
-	basics "go-projects/learning/basics"
+	"go-projects/learning/advanced"
+	"go-projects/learning/basics"
 )
 
 func main() {
 	basics.Basics1()
+	advanced.Advanced1()
 }
