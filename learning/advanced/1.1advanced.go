@@ -7,21 +7,31 @@ import (
 	"golang.org/x/sys/windows/registry"
 )
 
+const (
+	WIN_VERSION_PATH  string = "SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion"
+	INSTALLATION_TYPE string = "InstallationType"
+)
+
 func Advanced1() {
-	readRegistryValues()
+	str, err := GetWindowsVersionRegistryValue(INSTALLATION_TYPE)
+	if err != nil {
+		log.Fatal(err)
+	}
+	fmt.Printf("Windows installation type is %q\n", str)
 }
 
 /* Read windows registry key values */
-func readRegistryValues() {
-	key, err := registry.OpenKey(registry.LOCAL_MACHINE, `SOFTWARE\Microsoft\Windows NT\CurrentVersion`, registry.QUERY_VALUE)
+func GetWindowsVersionRegistryValue(val string) (string, error) {
+	key, err := registry.OpenKey(registry.LOCAL_MACHINE, WIN_VERSION_PATH, registry.QUERY_VALUE)
 	if err != nil {
-		log.Fatal(err)
+		return "", err
 	}
 	defer key.Close()
 
-	instype, _, err := key.GetStringValue("InstallationType")
+	regval, _, err := key.GetStringValue(val)
 	if err != nil {
-		log.Fatal(err)
+		return "", err
 	}
-	fmt.Printf("Windows installation type is %q\n", instype)
+
+	return regval, nil
 }

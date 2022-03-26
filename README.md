@@ -21,3 +21,6 @@ Open shell for <b>cassandra</b> container
 <b>Login to Cassandra</b>
 
 `cqlsh -u cassandra -p cassandra`
+
+<b>Run CQL queries</b>
+To create the keyspace and tables run the commands in the folder <i>cql > schema.cql</i>
