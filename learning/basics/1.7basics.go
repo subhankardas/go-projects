@@ -52,7 +52,9 @@ func Basics7() {
 	}("consume")
 
 	time.Sleep(time.Second)
+}
 
+func Basics8() {
 	/* Channel buffering - send multiple values into the channel
 	without a corresponding concurrent receive */
 	messagebuff := make(chan string, 2)
@@ -79,15 +81,24 @@ func Basics7() {
 	Without the <-done line, program would exit even before
 	the worker execution started */
 	fmt.Println("resuming", <-done)
+}
 
+func Basics9() {
 	/* Channel directions */
-	send := func(pings chan<- string, msg string) {
+	ping := func(pings chan<- string, msg string) {
 		pings <- msg // Pings defined only to receive values (chan<- type)
 		// ms := <-pings // COMPILE-TIME ERROR, cannot receive from send only
 	}
 
-	ping := make(chan string, 1)
-	send(ping, "message")
+	pong := func(pings <-chan string, pongs chan<- string) {
+		msg := <-pings
+		pongs <- msg
+	}
 
-	fmt.Println("completed")
+	pings := make(chan string, 1)
+	pongs := make(chan string, 1)
+
+	ping(pings, "ping 1")
+	pong(pings, pongs)
+	fmt.Println(<-pongs)
 }
