@@ -1,0 +1,5 @@
+12:00:00 [INFO] Loading app on port 80
+12:00:02 [ERROR] Error occurred reading config
+12:01:00 [INFO] Loaded app yaml file
+12:20:00 [INFO] Connected to database
+12:20:02 [ERROR] Failed to send event
